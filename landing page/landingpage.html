@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins',sans-serif;
+        }
+        body{
+            overflow: hidden;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:black;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo{
+            position: relative;
+            max-width: 170px;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+        }
+        header ul li{
+            list-style: none;
+        }
+        header ul li a{
+            display: inline-block;
+            color: rgb(254, 253, 255);
+            font-weight: 400;
+            margin-left: 40px;
+            text-decoration: none;
+        }
+        .content{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content .textbox{
+            position: relative;
+            max-width: 600px;
+        }
+        .content .textbox h2{
+            color: whitesmoke;
+            font-size: 4em;
+            line-height: 1.4em;
+            font-weight: 500;
+        }
+        .content .textbox h2 span{
+            color: darkturquoise;
+            font-size: 1.2em;
+            font-weight: 900;
+        }
+        .content .textbox p{
+            color:white;
+
+        }
+        .content .textbox a{
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: red;
+            color: black;
+            border-radius: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .content .imgbox{
+            width: 600px;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50px;
+            margin-top: 50px;
+        }
+        .content .imgbox img{
+            max-width: 240px;
+        }
+        .thumb{
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: end;
+        }
+        .thumb li{
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .thumb li:hover{
+            transform: translateY(-15px);
+        }
+        .thumb li img{
+            max-width: 60px;
+        }
+        .sci{
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        .sci li{
+            list-style: none;
+            
+        }
+        .sci li a{
+            display: inline-block;
+            margin: 5px 0;
+            transform: scale(0.6);
+            filter: invert(1);
+            
+        }
+        
+        .circle{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: red;
+            clip-path: circle(600px at right 400px);
+        }
+        .Starbucks{
+            width: 150px;
+        }
+        .sci i{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">What's New</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Taste the feeling<br></h2>
+                <p>Coca-Cola is evolving its business strategy to become a total beverage company by giving people more of the drinks they want – including low and no-sugar options across a wide array of categories – in more packages sold in more locations.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="imgbox">
+                <img src="cocacola3.png" class="Starbucks">
+            
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="cocacola1.png" onclick="imgSlider('cocacola1.png');changeCircleColor('red')"></li>
+            <li><img src="cocacola6.png" onclick="imgSlider('cocacola6.png');changeCircleColor('red')"></li>
+            <li><img src="cocacola3.png" onclick="imgSlider('cocacola3.png');changeCircleColor('red')"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><i class="fa-brands fa-x-twitter" style="color: #000000;"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-facebook-f" style="color: #000000;"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram" style="color: #000000;"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-github" style="color: #030303;"></i></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything){
+            document.querySelector('.Starbucks').src = anything;
+        }
+
+        function changeCircleColor(color){
+            const circle = document.querySelector('.circle');
+            circle.style.background = color;
+        }
+    </script>
+</body>
+</html>
